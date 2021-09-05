@@ -2,6 +2,10 @@
  
 都道府県選択タグ, select-prefタグ
 
+## sample
+
+https://code4fukui.github.io/select-pref/
+
 ## usage
 
 ```html
