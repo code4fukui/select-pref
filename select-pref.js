@@ -1,21 +1,22 @@
-import { TownID } from "https://code4fukui.github.io/TownID/TownID.js";
-
 class SelectPref extends HTMLElement {
   constructor() {
     super();
     this.init();
   }
   async init() {
-    const prefs = await TownID.getPrefs();
+    const ja = navigator.language == "ja";
+    //const ja = false;
+    const url = "https://code4fukui.github.io/address-japan/data/pref.json";
+    this.prefs = await (await fetch(url)).json();
     const cr = (tag) => document.createElement(tag);
     const sel = cr("select");
     const opt = cr("option");
-    opt.textContent = "都道府県";
+    opt.textContent = ja ? "都道府県" : "Prefecture";
     opt.value = "";
     sel.appendChild(opt);
-    for (const pref of prefs) {
+    for (const pref of this.prefs) {
       const opt = cr("option");
-      opt.textContent = pref;
+      opt.textContent = ja ? pref.都道府県名 : pref.都道府県名_英字;
       sel.appendChild(opt);
     }
     this.appendChild(sel);
@@ -36,7 +37,10 @@ class SelectPref extends HTMLElement {
     return this.sel.value;
   }
   set value(v) {
-    this.sel.value = v;
+    const ja = navigator.language == "ja";
+    //const ja = false;
+    const p = this.prefs.find(p => p.都道府県名 == v || p.都道府県名_英字 == v);
+    this.sel.value = ja ? p.都道府県名 : p.都道府県名_英字;
   }
 }
 
