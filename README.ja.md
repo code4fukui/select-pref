@@ -66,7 +66,7 @@
 ## データソース
 
 都道府県データは [address-japan](https://github.com/code4fukui/address-japan) プロジェクトから取得しています。
--   **データファイル:** `https://code4fukui.github.io/address-japan/data/pref.json`
+-   **データファイル:** `~~https://code4fukui.github.io/address-japan/data/pref.json`~~ *(unavailable)*
 
 ## クレジット
 

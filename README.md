@@ -68,7 +68,7 @@ This component relies on modern web platform features. A browser with support fo
 ## Data Source
 
 Prefecture data is fetched from the [address-japan](https://github.com/code4fukui/address-japan) project.
--   **Data file:** `https://code4fukui.github.io/address-japan/data/pref.json`
+-   **Data file:** `~~https://code4fukui.github.io/address-japan/data/pref.json`~~ *(unavailable)*
 
 ## Credit
 
